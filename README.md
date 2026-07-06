@@ -11,8 +11,6 @@ spin build
 ## Run the App 
 
 ```bash
-# start the docker container for postgres
-docker compose up
 spin up
 ```
 
