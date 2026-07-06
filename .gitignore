@@ -7,3 +7,5 @@ build/
 test-results/
 .spin-aka/.env
 .env.local
+.env
+.env.example
