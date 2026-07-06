@@ -32,17 +32,11 @@ This project uses [Clerk](https://clerk.com) for authentication.
 3. Go to **API Keys** in your Clerk dashboard
 4. Copy both keys — they must be from the **same application**
 
-Open `build.mjs` and update lines 442 and 444:
+Open `build.mjs` and update these two lines:
 
 ```js
 'process.env.CLERK_SECRET_KEY': '"sk_test_YOUR_CLERK_SECRET_KEY"',
 'process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY': '"pk_test_YOUR_CLERK_PUBLISHABLE_KEY"',
-```
-
-Also update `.env`:
-```
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_YOUR_CLERK_PUBLISHABLE_KEY
-CLERK_SECRET_KEY=sk_test_YOUR_CLERK_SECRET_KEY
 ```
 
 ---
@@ -71,7 +65,7 @@ CREATE TABLE "counter" (
 );
 ```
 
-### Update `build.mjs` line 443
+### Update `build.mjs`
 
 ```js
 // Remove ?sslmode=require from the URL — Spin WIT binding handles SSL internally
