@@ -1,0 +1,9 @@
+node_modules
+dist
+target
+.spin/
+build/
+.next/
+test-results/
+.spin-aka/.env
+.env.local

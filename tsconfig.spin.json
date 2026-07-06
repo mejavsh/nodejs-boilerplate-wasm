@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "nodenext",
+    "target": "es2022",
+    "jsx": "react",
+    "skipLibCheck": true,
+    "lib": ["ES2022", "WebWorker"],
+    "allowJs": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "moduleResolution": "nodenext"
+  },
+  "include": ["src/index.ts", "src/async-local-storage-polyfill.ts"]
+}

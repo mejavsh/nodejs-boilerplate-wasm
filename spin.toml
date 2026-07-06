@@ -1,0 +1,50 @@
+spin_manifest_version = 2
+
+[application]
+authors = ["Karthik Ganeshram <kganeshr@akamai.com>"]
+description = ""
+name = "next-boilerplate"
+version = "0.1.0"
+
+# Static file server for client-side assets (JS, CSS, images)
+[[trigger.http]]
+route = "/assets/..."
+component = "client-assets"
+
+[component.client-assets]
+source = { url = "https://github.com/fermyon/spin-fileserver/releases/download/v0.3.0/spin_static_fs.wasm", digest = "sha256:ef88708817e107bf49985c7cefe4dd1f199bf26f6727819183d5c996baa3d148" }
+files = [{ source = "dist/client/assets", destination = "/" }]
+
+# Static file server for root-level assets (favicons)
+[[trigger.http]]
+route = "/favicon.ico"
+component = "root-assets"
+
+[[trigger.http]]
+route = "/favicon-16x16.png"
+component = "root-assets"
+
+[[trigger.http]]
+route = "/favicon-32x32.png"
+component = "root-assets"
+
+[[trigger.http]]
+route = "/apple-touch-icon.png"
+component = "root-assets"
+
+[component.root-assets]
+source = { url = "https://github.com/fermyon/spin-fileserver/releases/download/v0.3.0/spin_static_fs.wasm", digest = "sha256:ef88708817e107bf49985c7cefe4dd1f199bf26f6727819183d5c996baa3d148" }
+files = [{ source = "dist/client", destination = "/" }]
+
+# Main WASM handler for RSC/SSR
+[[trigger.http]]
+route = "/..."
+component = "next-boilerplate"
+
+[component.next-boilerplate]
+source = "dist/next-boilerplate.wasm"
+exclude_files = ["**/node_modules"]
+allowed_outbound_hosts = ["https://*", "http://*", "postgres://ep-old-firefly-a750ut3n.ap-southeast-2.aws.neon.tech:5432"]
+[component.next-boilerplate.build]
+command = ["npm install", "npm run build"]
+watch = ["src/**/*.ts"]
