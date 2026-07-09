@@ -440,7 +440,7 @@ await build({
     'process.env.NODE_ENV': '"production"',
     'process.env.NEXT_RUNTIME': '"edge"',
     'process.env.CLERK_SECRET_KEY': '"your_clerk_secret_key"',
-    'process.env.DATABASE_URL': '"your_neon_database_url"',
+    'process.env.DATABASE_URL': '"your_database_url"',
     'process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY': '"your_clerk_publishable_key"',
     'process.env.NEXT_PUBLIC_APP_URL': '"http://localhost:3000"',
     'process.env.NEXT_PUBLIC_LOGGING_LEVEL': '"info"',
